@@ -191,7 +191,7 @@ def main_export(
 
     original_task = task
     task = infer_task(task, model_name_or_path)
-    framework = TasksManager.determine_framework(model_name_or_path, subfolder=subfolder, framework=framework)
+    framework = TasksManager.determine_framework(model_name_or_path, subfolder=subfolder, framework=framework, cache_dir=cache_dir)
     library_name_is_not_provided = library_name is None
     library_name = TasksManager.infer_library_from_model(
         model_name_or_path, subfolder=subfolder, library_name=library_name
